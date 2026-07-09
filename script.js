@@ -1,4 +1,11 @@
+const retangulo1 = document.getElementById('retangulo1');
 const retangulo2 = document.getElementById('retangulo2');
+
+if (retangulo1) {
+    retangulo1.addEventListener('click', () => {
+        window.location.href = 'pagina2.html';
+    });
+}
 
 function moverRetangulo() {
     const margem = 16;
