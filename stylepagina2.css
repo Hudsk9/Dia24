@@ -1,0 +1,12 @@
+.h1{
+    font-size: clamp(2rem, 7vw, 50px);
+    color: #ffffff;
+    text-align: center;
+    margin: 56px auto 16px;
+}
+
+body{
+    margin: 0;
+    padding: 24px 16px 32px;
+    background-color: #477580;
+}
