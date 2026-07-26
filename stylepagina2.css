@@ -34,15 +34,16 @@
 body{
     margin: 0;
     padding: 24px 16px 32px;
-    background: linear-gradient(135deg, #477580, #5a8fa3);
+    background: linear-gradient(135deg, #f8e8f1 0%, #f3e7ff 45%, #e8f2ff 100%);
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    color: #4f3f57;
 }
 
 .h1{
     font-size: clamp(2rem, 7vw, 50px);
-    color: #ffffff;
+    color: #4e3554;
     text-align: center;
     margin: 56px auto 16px;
     animation: pulse 3s ease-in-out infinite;
@@ -52,7 +53,7 @@ body{
 
 .p1{
     font-size: clamp(1rem, 3.5vw, 20px);
-    color: #c7c7c7;
+    color: #5d4a63;
     text-align: center;
     margin: 0 auto;
     max-width: 600px;
@@ -80,6 +81,58 @@ body{
 .heart:nth-child(9) { left: 90%; animation: float 9.5s infinite; animation-delay: 1.5s; }
 
 /* Galeria de Fotos - Carrossel */
+.gif-section {
+    max-width: 600px;
+    margin: 36px auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.gif-title {
+    font-size: clamp(1.2rem, 4vw, 24px);
+    color: #4e3554;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gif-image {
+    width: min(100%, 320px);
+    display: block;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.spotify-container {
+    max-width: 440px;
+    margin: 20px auto 0;
+}
+
+.spotify-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 105, 180, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    padding: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(8px);
+}
+
+.spotify-caption {
+    margin: 0 0 10px;
+    color: #4e3554;
+    font-size: 0.95rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.spotify-card iframe {
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
 .gallery-container {
     max-width: 800px;
     margin: 60px auto 0;
@@ -90,7 +143,7 @@ body{
 
 .gallery-title {
     font-size: clamp(1.5rem, 5vw, 32px);
-    color: #ffffff;
+    color: #4e3554;
     text-align: center;
     margin: 0 0 40px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -139,8 +192,8 @@ body{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    background: rgba(243, 220, 232, 0.85);
+    color: #4e3554;
     border: none;
     width: 50px;
     height: 50px;
@@ -178,7 +231,7 @@ body{
 
 .year-label {
     font-size: clamp(1.2rem, 4vw, 24px);
-    color: #ffffff;
+    color: #4e3554;
     font-weight: bold;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -198,7 +251,7 @@ body{
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(78, 53, 84, 0.25);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -272,9 +325,9 @@ body{
     position: absolute;
     top: 15px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(243, 220, 232, 0.9);
     border: none;
-    color: #ffffff;
+    color: #4e3554;
     font-size: 28px;
     cursor: pointer;
     width: 40px;
@@ -333,7 +386,7 @@ body{
 
 .modal-text {
     font-size: clamp(1rem, 3vw, 18px);
-    color: #ffffff;
+    color: #fef7fc;
     margin: 0;
     line-height: 1.6;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
