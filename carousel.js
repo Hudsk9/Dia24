@@ -72,7 +72,7 @@ function openModal() {
     modalYear.textContent = currentSlideIndex;
     
     // Esconde todos os textos
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 6; i++) {
         document.getElementById("text" + i).style.display = "none";
     }
     
@@ -97,5 +97,63 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         closeModal();
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const polaroidCard = document.getElementById("polaroidCard");
+
+    if (!polaroidCard) {
+        return;
+    }
+
+    const polaroidImage = document.getElementById("polaroidImage");
+    const polaroidCaption = document.getElementById("polaroidCaption");
+    const polaroidPhotos = [
+        { src: "pola3.jpg", alt: "Polaroid do casal", caption: "Eu" },
+        { src: "pola1.jpg", alt: "Polaroid 1", caption: "Te amo" },
+        { src: "pola2.jpg", alt: "Polaroid 2", caption: "Mais doq tudo!!" }
+    ];
+
+    let currentPhotoIndex = 0;
+    let isSwitching = false;
+
+    function showNextPolaroid() {
+        if (isSwitching) {
+            return;
+        }
+
+        isSwitching = true;
+        const nextPhotoIndex = (currentPhotoIndex + 1) % polaroidPhotos.length;
+
+        polaroidCard.classList.remove("is-entering");
+        void polaroidCard.offsetWidth;
+        polaroidCard.classList.add("is-leaving");
+
+        window.setTimeout(() => {
+            currentPhotoIndex = nextPhotoIndex;
+            const nextPhoto = polaroidPhotos[currentPhotoIndex];
+
+            polaroidImage.src = nextPhoto.src;
+            polaroidImage.alt = nextPhoto.alt;
+            polaroidCaption.textContent = nextPhoto.caption;
+
+            polaroidCard.classList.remove("is-leaving");
+            void polaroidCard.offsetWidth;
+            polaroidCard.classList.add("is-entering");
+
+            window.setTimeout(() => {
+                polaroidCard.classList.remove("is-entering");
+                isSwitching = false;
+            }, 440);
+        }, 260);
+    }
+
+    polaroidCard.addEventListener("click", showNextPolaroid);
+    polaroidCard.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            showNextPolaroid();
+        }
+    });
 });
 

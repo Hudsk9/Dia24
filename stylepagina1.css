@@ -11,6 +11,93 @@ body{
     padding: 24px 16px 32px;
     background: linear-gradient(135deg, #f7e8f3 0%, #f3e7ff 45%, #e8f2ff 100%);
     color: #4f3f57;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.pisca-pisca{
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92vw, 760px);
+    height: 92px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pisca-pisca::before{
+    content: none;
+}
+
+.pisca-pisca span{
+    position: absolute;
+    width: 16px;
+    height: 22px;
+    border-radius: 50% 50% 45% 45%;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    animation: piscar 1.4s infinite ease-in-out;
+}
+
+.pisca-pisca span::before{
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 10px;
+    border-radius: 999px 999px 2px 2px;
+    background: rgba(78, 53, 84, 0.9);
+}
+
+.pisca-pisca span:nth-child(4n + 1){
+    background: #ff6b6b;
+    animation-delay: 0s;
+}
+
+.pisca-pisca span:nth-child(4n + 2){
+    background: #ffd166;
+    animation-delay: 0.18s;
+}
+
+.pisca-pisca span:nth-child(4n + 3){
+    background: #63d471;
+    animation-delay: 0.36s;
+}
+
+.pisca-pisca span:nth-child(4n + 4){
+    background: #4dabf7;
+    animation-delay: 0.54s;
+}
+
+.pisca-pisca span:nth-child(1){ left: 0%; top: 0; }
+.pisca-pisca span:nth-child(2){ left: 9%; top: 4px; }
+.pisca-pisca span:nth-child(3){ left: 18%; top: 8px; }
+.pisca-pisca span:nth-child(4){ left: 27%; top: 13px; }
+.pisca-pisca span:nth-child(5){ left: 36%; top: 17px; }
+.pisca-pisca span:nth-child(6){ left: 45%; top: 20px; }
+.pisca-pisca span:nth-child(7){ left: 54%; top: 20px; }
+.pisca-pisca span:nth-child(8){ left: 63%; top: 17px; }
+.pisca-pisca span:nth-child(9){ left: 72%; top: 13px; }
+.pisca-pisca span:nth-child(10){ left: 81%; top: 8px; }
+.pisca-pisca span:nth-child(11){ left: 90%; top: 4px; }
+.pisca-pisca span:nth-child(12){ left: 98%; top: 0; }
+
+@keyframes piscar{
+    0%, 100%{
+        opacity: 0.35;
+        transform: translateY(0) scale(0.92);
+        filter: saturate(0.9);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+
+    50%{
+        opacity: 1;
+        transform: translateY(-2px) scale(1.05);
+        filter: saturate(1.25) brightness(1.08);
+        box-shadow: 0 0 14px currentColor, 0 0 28px rgba(255, 255, 255, 0.55);
+    }
 }
 
 .h1{
@@ -87,8 +174,23 @@ body{
         padding: 20px 12px 24px;
     }
 
+    .pisca-pisca{
+        top: 8px;
+        transform: translateX(-50%);
+        transform-origin: top center;
+        width: min(95vw, 760px);
+        height: 78px;
+        scale: 0.78;
+    }
+
+    .pisca-pisca::before{
+        left: 6%;
+        right: 6%;
+        height: 54px;
+    }
+
     .h1{
-        margin-top: 36px;
+        margin-top: 56px;
         line-height: 1.1;
     }
 

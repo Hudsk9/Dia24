@@ -480,3 +480,76 @@ body{
         font-size: 18px;
     }
 }
+
+.polaroid {
+  background-color: #fff;
+    width: min(100%, 220px);
+  /* Padding maior embaixo para a legenda */
+    padding: 8px 8px 28px 8px;
+  /* Sombra para efeito 3D */
+  box-shadow: 5px 7px 4px #888888;
+  /* Opcional: leve rotação para realismo */
+  transform: rotate(-2deg);
+    display: block;
+    margin: 20px auto 0;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+    transform-origin: center center;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+  display: block;
+}
+
+.polaroid figcaption {
+  text-align: center;
+  font-family: 'Indie Flower', cursive; /* Fonte manuscrita opcional */
+    font-size: 1rem;
+    margin-top: 8px;
+}   
+
+.polaroid.is-leaving {
+    animation: polaroid-out 260ms ease-in forwards;
+}
+
+.polaroid.is-entering {
+    animation: polaroid-in 420ms ease-out forwards;
+}
+
+@keyframes polaroid-out {
+    0% {
+        opacity: 1;
+        transform: translateX(0) rotate(-2deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-42px) rotate(-10deg) scale(0.94);
+    }
+}
+
+@keyframes polaroid-in {
+    0% {
+        opacity: 0;
+        transform: translateX(42px) rotate(8deg) scale(0.94);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(-2deg) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .polaroid {
+        width: min(100%, 180px);
+        margin: 16px auto 0;
+        padding: 7px 7px 24px 7px;
+    }
+
+    .polaroid figcaption {
+        font-size: 0.9rem;
+        margin-top: 6px;
+    }
+}
