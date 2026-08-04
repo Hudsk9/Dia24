@@ -8,11 +8,16 @@ html, body{
 
 body{
     margin: 0;
-    padding: 24px 16px 32px;
+    padding: 24px clamp(12px, 3vw, 24px) 32px;
     background: linear-gradient(135deg, #f7e8f3 0%, #f3e7ff 45%, #e8f2ff 100%);
     color: #4f3f57;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .pisca-pisca{
@@ -169,28 +174,21 @@ body{
     cursor: pointer;
 }
 
-@media (max-width: 640px){
+@media (max-width: 768px){
     body{
         padding: 20px 12px 24px;
+        justify-content: flex-start;
     }
 
     .pisca-pisca{
         top: 8px;
-        transform: translateX(-50%);
-        transform-origin: top center;
         width: min(95vw, 760px);
         height: 78px;
-        scale: 0.78;
-    }
-
-    .pisca-pisca::before{
-        left: 6%;
-        right: 6%;
-        height: 54px;
+        scale: 0.82;
     }
 
     .h1{
-        margin-top: 56px;
+        margin-top: 64px;
         line-height: 1.1;
     }
 
@@ -198,10 +196,35 @@ body{
         flex-direction: column;
         margin-top: 40px;
         gap: 14px;
+        width: 100%;
     }
 
     .retangulo,
     .retangulo2{
         width: min(100%, 360px);
+        min-height: 84px;
+    }
+}
+
+@media (max-width: 480px){
+    .h1{
+        font-size: clamp(1.7rem, 9vw, 2.3rem);
+        margin-top: 72px;
+    }
+
+    .p1{
+        font-size: 1rem;
+        padding: 0 4px;
+    }
+
+    .pisca-pisca{
+        scale: 0.7;
+        top: 2px;
+    }
+
+    .retangulo,
+    .retangulo2{
+        min-height: 76px;
+        padding: 10px 14px;
     }
 }

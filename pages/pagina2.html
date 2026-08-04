@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7 Anos</title>
-    <link rel="stylesheet" type="text/css" href="stylepagina2.css">
+    <link rel="stylesheet" href="../css/stylepagina2.css">
 </head>
 <body>
     <div class="heart">❤️</div>
@@ -16,100 +16,99 @@
     <div class="heart">❤️</div>
     <div class="heart">❤️</div>
     <div class="heart">❤️</div>
-    
+
     <h1 class="h1">FELIZ 7 ANOS MEU AMOR!</h1>
     <p class="p1">Que venham muitos mais anos de felicidade e amor ao seu lado,
-                tenho tanta sorte de ter você na minha vida, e sou grato por cada 
-                momento que passamos juntos. E aqui está um pouco dos nossos momentos 
+                tenho tanta sorte de ter você na minha vida, e sou grato por cada
+                momento que passamos juntos. E aqui está um pouco dos nossos momentos
                 juntos, espero que você goste!</p>
 
-        <figure class="polaroid" id="polaroidCard" role="button" tabindex="0" aria-label="Trocar foto da polaroid">
-    <img id="polaroidImage" src="pola3.jpg" alt="Polaroid do casal"> 
-    <figcaption id="polaroidCaption">Eu</figcaption>
+    <figure class="polaroid" id="polaroidCard" role="button" tabindex="0" aria-label="Trocar foto da polaroid">
+        <img id="polaroidImage" src="../assets/images/pola3.jpg" alt="Polaroid do casal" loading="lazy">
+        <figcaption id="polaroidCaption">Eu</figcaption>
     </figure>
 
     <div class="gif-section">
         <h2 class="gif-title">Eu te amo demais!💕</h2>
-        <img src="gifs/giphy.gif" alt="GIF animado" class="gif-image">
+        <img src="../assets/gifs/giphy.gif" alt="GIF animado" class="gif-image" loading="lazy">
 
         <div class="spotify-container">
             <div class="spotify-card">
                 <p class="spotify-caption">Música que resume meu amor por você❤️</p>
-                <iframe src="https://open.spotify.com/embed/track/0Wh99eifNTNqDFRtzWhCE2?si=bacc21c46964407f" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe src="https://open.spotify.com/embed/track/0Wh99eifNTNqDFRtzWhCE2?si=bacc21c46964407f" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
     </div>
-    
+
     <div class="gallery-container">
         <h2 class="gallery-title">Nossos 7 Anos Juntos (clica nas imagens)💕</h2>
-        
+
         <div class="carousel-wrapper">
-            <div class="carousel" onclick="openModal()">
+            <div class="carousel">
                 <div class="carousel-slide">
-                    <img src="ano1.jpg" alt="Ano 1">
+                    <img src="../assets/images/ano1.jpg" alt="Ano 1" loading="lazy">
                 </div>
                 <div class="carousel-slide">
-                    <img src="ano2.jpg" alt="Ano 2">
+                    <img src="../assets/images/ano2.jpg" alt="Ano 2" loading="lazy">
                 </div>
                 <div class="carousel-slide">
-                    <img src="ano3.jpg" alt="Ano 3">
+                    <img src="../assets/images/ano3.jpg" alt="Ano 3" loading="lazy">
                 </div>
                 <div class="carousel-slide">
-                    <img src="ano4.jpg" alt="Ano 4">
+                    <img src="../assets/images/ano4.jpg" alt="Ano 4" loading="lazy">
                 </div>
                 <div class="carousel-slide">
-                    <img src="ano5.jpg" alt="Ano 5">
+                    <img src="../assets/images/ano5.jpg" alt="Ano 5" loading="lazy">
                 </div>
                 <div class="carousel-slide">
-                    <img src="ano6.jpg" alt="Ano 6">
+                    <img src="../assets/images/ano6.jpg" alt="Ano 6" loading="lazy">
                 </div>
             </div>
-            
-            <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
-            <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+
+            <button type="button" class="carousel-btn prev" aria-label="Slide anterior">❮</button>
+            <button type="button" class="carousel-btn next" aria-label="Próximo slide">❯</button>
         </div>
-        
+
         <div class="carousel-info">
             <div class="year-label">Ano <span id="currentYear">1</span></div>
             <div class="carousel-dots">
-                <button class="dot active" onclick="currentSlide(1)"></button>
-                <button class="dot" onclick="currentSlide(2)"></button>
-                <button class="dot" onclick="currentSlide(3)"></button>
-                <button class="dot" onclick="currentSlide(4)"></button>
-                <button class="dot" onclick="currentSlide(5)"></button>
-                <button class="dot" onclick="currentSlide(6)"></button>
+                <button type="button" class="dot active" data-slide-index="1" aria-label="Ir para o ano 1"></button>
+                <button type="button" class="dot" data-slide-index="2" aria-label="Ir para o ano 2"></button>
+                <button type="button" class="dot" data-slide-index="3" aria-label="Ir para o ano 3"></button>
+                <button type="button" class="dot" data-slide-index="4" aria-label="Ir para o ano 4"></button>
+                <button type="button" class="dot" data-slide-index="5" aria-label="Ir para o ano 5"></button>
+                <button type="button" class="dot" data-slide-index="6" aria-label="Ir para o ano 6"></button>
             </div>
         </div>
     </div>
-    
-    <!-- Modal de Zoom -->
-    <div id="photoModal" class="photo-modal" onclick="closeModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-            
+
+    <div id="photoModal" class="photo-modal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="modal-close" aria-label="Fechar modal">✕</button>
+
             <div class="modal-image">
-                <img id="modalImg" src="ano1.jpg" alt="Foto ampliada">
+                <img id="modalImg" src="../assets/images/ano1.jpg" alt="Foto ampliada">
             </div>
-            
+
             <div class="modal-text-container">
                 <h3 class="modal-year">Ano <span id="modalYear">1</span></h3>
-                
+
                 <p id="text1" class="modal-text" style="display: none;">Nesse dia foi tão bom, lembro que eu estava nervoso
-                                                                        e feliz ao mesmo tempo, afinal já tinham se passado 
+                                                                        e feliz ao mesmo tempo, afinal já tinham se passado
                                                                         1 ano e tinhamos acabado de enfrentar uma pândemia,
-                                                                        depois a gente comemorou o niver da joaninha, 
+                                                                        depois a gente comemorou o niver da joaninha,
                                                                         lembro como se fosse ontem! 💕</p>
                 <p id="text2" class="modal-text" style="display: none;">E então chegou o segundo ano, sentindo a mesma coisa
                                                                         nervosismo e uma felicidade extrema de ter você do meu
                                                                         lado pela segunda vez!💕</p>
                 <p id="text3" class="modal-text" style="display: none;">No terceiro você já estava com piercing e o cabelo de outra cor
                                                                         assim como todos os outros anos que passaram, espero
-                                                                        que quando a gente se casar, ficarmos velhos ,você ainda 
+                                                                        que quando a gente se casar, ficarmos velhos ,você ainda
                                                                         tenha esse habito, de ser quem você é, meu amor!💕</p>
                 <p id="text4" class="modal-text" style="display: none;">Aqui é no nosso 4° ano juntos, você sempre mais perfeita
-                                                                        do que nunca, e meu amor por você se tornando maior e mais lindo a cada 
+                                                                        do que nunca, e meu amor por você se tornando maior e mais lindo a cada
                                                                         ano que passa! 💕</p>
-                <p id="text5" class="modal-text" style="display: none;">Dizem que no quinto ano de são chamados de "Bodas de paixão" que 
+                <p id="text5" class="modal-text" style="display: none;">Dizem que no quinto ano de são chamados de "Bodas de paixão" que
                                                                         simboliza a doçura e a resistência do amor. E é visto como um período
                                                                         de maturidade suficiente para conhecer profundamente o parceiro.</p>
                 <p id="text6" class="modal-text" style="display: none;">Já no sexto ano, embora estamos mais maduros, dizem que ainda exige cuidado
@@ -118,7 +117,6 @@
         </div>
     </div>
 
-    
-    <script src="carousel.js"></script>
+    <script src="../js/carousel.js" defer></script>
 </body>
 </html>
