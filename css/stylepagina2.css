@@ -321,6 +321,24 @@ body{
     overflow-y: auto;
 }
 
+.modal-content.year-1 {
+    background: rgba(96, 96, 96, 0.96);
+}
+
+.modal-content.year-2 {
+    background: rgba(231, 162, 104, 0.96);
+}
+
+.modal-content.year-3,
+.modal-content.year-4 {
+    background: rgba(176, 52, 52, 0.96);
+}
+
+.modal-content.year-5,
+.modal-content.year-6 {
+    background: rgba(61, 118, 184, 0.96);
+}
+
 .modal-close {
     position: absolute;
     top: 15px;

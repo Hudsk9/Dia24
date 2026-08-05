@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.carousel-btn.next');
     const dotsContainer = document.querySelector('.carousel-dots');
     const modal = document.getElementById('photoModal');
+    const modalContent = document.querySelector('.modal-content');
     const modalImage = document.getElementById('modalImg');
     const modalYear = document.getElementById('modalYear');
     const modalCloseButton = document.querySelector('.modal-close');
     const modalTexts = Array.from(document.querySelectorAll('.modal-text'));
+    const modalYearClasses = ['year-1', 'year-2', 'year-3', 'year-4', 'year-5', 'year-6'];
 
     let currentSlideIndex = 1;
 
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openModal() {
-        if (!modal || !modalImage || !modalYear) {
+        if (!modal || !modalContent || !modalImage || !modalYear) {
             return;
         }
 
@@ -60,6 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImage.src = imgElement.src;
         modalImage.alt = imgElement.alt;
         modalYear.textContent = currentSlideIndex;
+
+        modalYearClasses.forEach((className) => {
+            modalContent.classList.remove(className);
+        });
+        modalContent.classList.add(`year-${currentSlideIndex}`);
 
         modalTexts.forEach((text) => {
             text.style.display = 'none';
