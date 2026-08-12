@@ -18,14 +18,3 @@ O site foi criado para celebrar 7 anos de relacionamento, com duas páginas prin
 1. Abra a pasta do projeto no VS Code.
 2. Inicie um servidor local, por exemplo com a extensão Live Server.
 3. Abra `pages/pagina1.html` no navegador.
-
-## Publicação gratuita
-
-Você pode colocar o site no ar de graça usando:
-
-- Netlify
-- GitHub Pages
-
-## Observação
-
-Se for publicar no GitHub Pages, pode ser útil criar um arquivo `index.html` na raiz do projeto apontando para a página inicial.
